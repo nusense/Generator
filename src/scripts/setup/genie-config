@@ -29,7 +29,7 @@ srcdir=$GENIE/src
 
 # Libraries from GENIE/Generator/Framework
 # (always present)
-fmwk_libs=" -lGFwMsg -lGFwReg -lGFwAlg -lGFwInt -lGFwGHEP -lGFwNum -lGFwUtl -lGFwParDat -lGFwEG -lGFwNtp "
+fmwk_libs=" -lGFwMsg -lGFwReg -lGFwInt -lGFwGHEP -lGFwNum -lGFwUtl -lGFwAlg -lGFwParDat -lGFwEG -lGFwNtp "
 
 # Libraries from GENIE/Generator/Physics
 # (standard)

@@ -23,6 +23,17 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   -->
 
+  <param_set name="EXT-GEN-XYZZY">
+     <param type="string" name="VldContext"> </param>
+     <param type="int"    name="NModules">   4                                                    </param>
+     <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
+     <param type="alg"    name="Module-1">   genie::VertexGenerator/Default                       </param>
+     <param type="alg"    name="Module-2">   genie::XyzzyEventGenerator/Default                   </param>
+     <param type="alg"    name="Module-3">   genie::UnstableParticleDecayer/AfterHadronTransport  </param>
+     <param type="alg"    name="ILstGen">    genie::XyzzyInteractionListGenerator/Default         </param>
+   </param_set>
+
+
   <param_set name="NucleonDecay">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   4                                                    </param>
@@ -515,7 +526,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
      <param type="alg"    name="Module-1">   genie::VertexGenerator/Default                      </param>
      <param type="alg"    name="Module-2">   genie::CEvNSEventGenerator/Default                  </param>
-     <param type="alg"    name="ILstGen">    genie::CEvNSInteractionListGenerator/Default        </param>          
+     <param type="alg"    name="ILstGen">    genie::CEvNSInteractionListGenerator/Default        </param>
   </param_set>
 
   <param_set name="COH-NC-PION">
@@ -617,7 +628,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DMDISInteractionListGenerator/DM-Default        </param>
   </param_set>
 
-  <param_set name="DME"> 
+  <param_set name="DME">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                          </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default        </param>

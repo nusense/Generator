@@ -14,7 +14,7 @@
 \created  May 06, 2004
 
 \cpright  Copyright (c) 2003-2020, The GENIE Collaboration
-          For the full text of the license visit http://copyright.genie-mc.org          
+          For the full text of the license visit http://copyright.genie-mc.org
 */
 //____________________________________________________________________________
 
@@ -39,7 +39,8 @@ typedef enum EInteractionType {
   kIntWeakMix,     // CC + NC + interference
   kIntDarkMatter,  //
   kIntNDecay,      //
-  kIntNOsc         //
+  kIntNOsc,        //
+  kIntExternalGen = 999
 
 } InteractionType_t;
 
@@ -53,14 +54,15 @@ public:
   {
     switch (type) {
 
-      case(kIntEM)         : return "EM";                        break;
-      case(kIntWeakCC)     : return "Weak[CC]";                  break;
-      case(kIntWeakNC)     : return "Weak[NC]";                  break;
-      case(kIntWeakMix)    : return "Weak[CC+NC+interference]";  break;
-      case(kIntDarkMatter) : return "DarkMatter";                break;
-      case(kIntNDecay)     : return "NucleonDecay";              break;
-      case(kIntNOsc)       : return "NeutronOsc";                break;
-      default :              return "Unknown";                   break;
+      case(kIntEM)          : return "EM";                        break;
+      case(kIntWeakCC)      : return "Weak[CC]";                  break;
+      case(kIntWeakNC)      : return "Weak[NC]";                  break;
+      case(kIntWeakMix)     : return "Weak[CC+NC+interference]";  break;
+      case(kIntDarkMatter)  : return "DarkMatter";                break;
+      case(kIntNDecay)      : return "NucleonDecay";              break;
+      case(kIntNOsc)        : return "NeutronOsc";                break;
+      case(kIntExternalGen) : return "ExternalGenerator";         break;
+      default :               return "Unknown";                   break;
     }
     return "Unknown";
   }
@@ -98,6 +100,8 @@ public:
     else if ( strcmp(t,"NDECAY") == 0 ) return kIntNDecay;
 
     else if ( strcmp(t,"NOSC") == 0 ) return kIntNOsc;
+
+    else if ( strcmp(t,"ExternalGenerator") == 0 ) return kIntExternalGen;
 
     else return kIntNull;
   }

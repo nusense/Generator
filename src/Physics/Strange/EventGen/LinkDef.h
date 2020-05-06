@@ -16,4 +16,8 @@
 
 //#pragma link C++ class genie::utils::gsl::d3Xsec_dTldTkdCosThetal;
 
+// RWH
+#pragma link C++ class genie::XyzzyInteractionListGenerator;
+#pragma link C++ class genie::XyzzyEventGenerator;
+
 #endif

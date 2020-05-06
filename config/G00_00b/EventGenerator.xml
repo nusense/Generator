@@ -23,7 +23,17 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   -->
 
-  <param_set name="NucleonDecay"> 
+  <param_set name="EXT-GEN-XYZZY">
+     <param type="string" name="VldContext"> </param>
+     <param type="int"    name="NModules">   4                                                    </param>
+     <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
+     <param type="alg"    name="Module-1">   genie::VertexGenerator/Default                       </param>
+     <param type="alg"    name="Module-2">   genie::XyzzyEventGenerator/Default                   </param>
+     <param type="alg"    name="Module-3">   genie::UnstableParticleDecayer/AfterHadronTransport  </param>
+     <param type="alg"    name="ILstGen">    genie::XyzzyInteractionListGenerator/Default         </param>
+  </param_set>
+
+  <param_set name="NucleonDecay">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   4                                                    </param>
      <param type="alg"    name="Module-0">   genie::NucleonDecayPrimaryVtxGenerator/Default       </param>
@@ -43,11 +53,11 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::NNBarOscDummyInteractionListGenerator/Default </param>
   </param_set>
 
-  <!-- 
+  <!--
   modified event generation model for CCQE that re-throws the nuclear model during the kinematic
   accept-reject loop. this is technically more correct physics, but is not on by default until
-  GENIE 3.0.  
-  <param_set name="QEL-CC"> 
+  GENIE 3.0.
+  <param_set name="QEL-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   8                                                    </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -84,7 +94,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
    </param_set>
 
 
-  <param_set name="QEL-NC"> 
+  <param_set name="QEL-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   12                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -106,7 +116,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   modified event generation model for CCQE that re-throws the nuclear model during the kinematic
   accept-reject loop. this is technically more correct physics, but is not on by default until
   GENIE 3.0.
-  <param_set name="QEL-EM"> 
+  <param_set name="QEL-EM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   8                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -123,7 +133,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
 
   <!-- "old" style QEL event generation...
   -->
-  <param_set name="QEL-EM"> 
+  <param_set name="QEL-EM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   12                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -141,7 +151,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::QELInteractionListGenerator/EM-Default        </param>
   </param_set>
 
-  <param_set name="QEL-CC-LAMBDA"> 
+  <param_set name="QEL-CC-LAMBDA">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   9                                                    </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -156,7 +166,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::QELInteractionListGenerator/CC-Lambda-Default  </param>
   </param_set>
 
-  <param_set name="DIS-CC"> 
+  <param_set name="DIS-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -172,7 +182,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DISInteractionListGenerator/CC-Default        </param>
   </param_set>
 
-  <param_set name="DIS-NC"> 
+  <param_set name="DIS-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -188,7 +198,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DISInteractionListGenerator/NC-Default        </param>
   </param_set>
 
-  <param_set name="DIS-EM"> 
+  <param_set name="DIS-EM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -204,7 +214,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DISInteractionListGenerator/EM-Default        </param>
   </param_set>
 
-  <param_set name="RES-CC"> 
+  <param_set name="RES-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                    </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                   </param>
@@ -220,7 +230,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::RESInteractionListGenerator/CC-Default         </param>
   </param_set>
 
-  <param_set name="RES-NC"> 
+  <param_set name="RES-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                    </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                   </param>
@@ -236,7 +246,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::RESInteractionListGenerator/NC-Default         </param>
   </param_set>
 
-  <param_set name="RES-EM"> 
+  <param_set name="RES-EM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                    </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                   </param>
@@ -252,7 +262,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::RESInteractionListGenerator/EM-Default         </param>
   </param_set>
 
-  <param_set name="QEL-CC-CHARM"> 
+  <param_set name="QEL-CC-CHARM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   9                                        </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -267,7 +277,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::QELInteractionListGenerator/CC-Charm-Default  </param>
   </param_set>
 
-  <param_set name="DIS-CC-SINGLEK"> 
+  <param_set name="DIS-CC-SINGLEK">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -284,7 +294,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   </param_set>
 
 
-  <param_set name="DIS-CC-CHARM"> 
+  <param_set name="DIS-CC-CHARM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -300,7 +310,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DISInteractionListGenerator/CC-Charm-Default  </param>
   </param_set>
 
-  <param_set name="IMD"> 
+  <param_set name="IMD">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                          </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default        </param>
@@ -311,7 +321,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::NuEInteractionListGenerator/IMD     </param>
   </param_set>
 
-  <param_set name="IMD-ANH"> 
+  <param_set name="IMD-ANH">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                              </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default            </param>
@@ -322,7 +332,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::NuEInteractionListGenerator/IMD-ANH     </param>
   </param_set>
 
-  <param_set name="NUE-EL"> 
+  <param_set name="NUE-EL">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                          </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default        </param>
@@ -333,7 +343,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::NuEInteractionListGenerator/NUE-EL  </param>
   </param_set>
 
-  <param_set name="AM-NUGAMMA"> 
+  <param_set name="AM-NUGAMMA">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   6                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -345,7 +355,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::AMNuGammaInteractionListGenerator/Default    </param>
   </param_set>
 
-  <param_set name="GLRES"> 
+  <param_set name="GLRES">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   3                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -354,7 +364,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::GLRESInteractionListGenerator/Default        </param>
   </param_set>
 
-  <param_set name="MEC-CC"> 
+  <param_set name="MEC-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -365,7 +375,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::MECInteractionListGenerator/CC-Default       </param>
   </param_set>
 
-  <param_set name="MEC-NC"> 
+  <param_set name="MEC-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -376,7 +386,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::MECInteractionListGenerator/NC-Default       </param>
   </param_set>
 
-  <param_set name="MEC-EM"> 
+  <param_set name="MEC-EM">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   5                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -387,7 +397,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::MECInteractionListGenerator/EM-Default       </param>
   </param_set>
 
-  <param_set name="DFR-CC"> 
+  <param_set name="DFR-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   9                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -402,7 +412,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DFRInteractionListGenerator/CC-Default       </param>
   </param_set>
 
-  <param_set name="DFR-NC"> 
+  <param_set name="DFR-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   9                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -417,7 +427,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::DFRInteractionListGenerator/NC-Default       </param>
   </param_set>
 
-  <param_set name="COH-NC-PION"> 
+  <param_set name="COH-NC-PION">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   6                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -429,7 +439,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="ILstGen">    genie::COHInteractionListGenerator/NC-PION          </param>
   </param_set>
 
-  <param_set name="COH-CC-PION"> 
+  <param_set name="COH-CC-PION">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   6                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                 </param>
@@ -447,7 +457,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   -->
 
-  <param_set name="RSPP-CC"> 
+  <param_set name="RSPP-CC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -464,7 +474,7 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
      <param type="alg"    name="XSecModel">  genie::ReinSehgalSPPPXSec/Default                    </param>
   </param_set>
 
-  <param_set name="RSPP-NC"> 
+  <param_set name="RSPP-NC">
      <param type="string" name="VldContext"> </param>
      <param type="int"    name="NModules">   10                                                   </param>
      <param type="alg"    name="Module-0">   genie::InitialStateAppender/Default                  </param>
@@ -482,4 +492,3 @@ XSecModel                   alg     Yes  Cross section model used at the thread 
   </param_set>
 
 </alg_conf>
-

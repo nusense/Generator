@@ -3,7 +3,7 @@ Long_t load_single_lib(const char * libname)
   return gSystem->Load(libname);
 }
 
-Long_t load_libs_from_command(const char * list_libs_command, bool verbose = false)
+Long_t load_libs_from_command(const char * list_libs_command, bool verbose = true)
 { // Takes a linker-style list of libs (eg "-lmygreatlib -lmylessgoodlib" )
   // and loads each using gSystem::Load()
   // Returns 0 on success, 1 on failure
@@ -18,6 +18,7 @@ Long_t load_libs_from_command(const char * list_libs_command, bool verbose = fal
     for (int i = 0 ; i < tokens->GetEntries() ; i++) {
       TObjString * token_os = static_cast<TObjString*>(tokens->At(i));
       if (!token_os) {continue;}
+      if (verbose) std::cout<<token_os->GetString()<<std::endl;
       TObjArray * matches = re.MatchS(token_os->GetString());
       if (matches->GetEntries()!=2) { continue; }
       TObjString * libname_os = static_cast<TObjString*>(matches->At(1));
