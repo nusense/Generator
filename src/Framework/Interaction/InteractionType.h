@@ -40,6 +40,7 @@ typedef enum EInteractionType {
   kIntDarkMatter,  //
   kIntNDecay,      //
   kIntNOsc,        //
+  kIntNHL,         //
   kIntExternalGen = 999
 
 } InteractionType_t;
@@ -54,15 +55,16 @@ public:
   {
     switch (type) {
 
-      case(kIntEM)          : return "EM";                        break;
-      case(kIntWeakCC)      : return "Weak[CC]";                  break;
-      case(kIntWeakNC)      : return "Weak[NC]";                  break;
-      case(kIntWeakMix)     : return "Weak[CC+NC+interference]";  break;
-      case(kIntDarkMatter)  : return "DarkMatter";                break;
-      case(kIntNDecay)      : return "NucleonDecay";              break;
-      case(kIntNOsc)        : return "NeutronOsc";                break;
-      case(kIntExternalGen) : return "ExternalGenerator";         break;
-      default :               return "Unknown";                   break;
+      case(kIntEM)         : return "EM";                        break;
+      case(kIntWeakCC)     : return "Weak[CC]";                  break;
+      case(kIntWeakNC)     : return "Weak[NC]";                  break;
+      case(kIntWeakMix)    : return "Weak[CC+NC+interference]";  break;
+      case(kIntDarkMatter) : return "DarkMatter";                break;
+      case(kIntNDecay)     : return "NucleonDecay";              break;
+      case(kIntNOsc)       : return "NeutronOsc";                break;
+      case(kIntNHL)        : return "NHL";                       break;
+      case(kIntExternalGen): return "ExternalGenerator";         break;
+      default :              return "Unknown";                   break;
     }
     return "Unknown";
   }
@@ -100,6 +102,8 @@ public:
     else if ( strcmp(t,"NDECAY") == 0 ) return kIntNDecay;
 
     else if ( strcmp(t,"NOSC") == 0 ) return kIntNOsc;
+
+    else if ( strcmp(t,"NHL") == 0 ) return kIntNHL;
 
     else if ( strcmp(t,"ExternalGenerator") == 0 ) return kIntExternalGen;
 
